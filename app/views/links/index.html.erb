@@ -1,8 +1,5 @@
 <h1>LINKS</h1>
 
-<% @links.each do |link| %>
-  <%= link_to link.title, link.url %>
-  <p><%= link.summary %></p>
-<% end %>
+<%= render @links %>
 
 <%= link_to "Submit a New Link", new_link_path %>

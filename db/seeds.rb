@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+50.times do
+  Link.create!(title: Faker::Hipster.sentence, url: Faker::Internet.url, summary: Faker::Lorem.paragraph, votes: rand(500))
+end

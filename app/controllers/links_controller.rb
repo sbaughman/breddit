@@ -17,6 +17,17 @@ class LinksController < ApplicationController
     end
   end
 
+  def vote
+    @link = Link.find(params[:id])
+    @link.increment!(:votes)
+    redirect_to @link.url
+  end
+
+  def show
+    @link = Link.find(params[:id])
+    redirect_to @link.url
+  end
+
   private
 
   def link_params

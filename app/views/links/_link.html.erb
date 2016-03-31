@@ -1,0 +1,7 @@
+<div class="col-xs-1 votes">
+  <p><%= link.votes %></p>
+</div>
+<div class="col-xs-11">
+  <%= link_to link.title, vote_link_path(link) %>
+  <p><%= link.summary %></p>
+</div>
