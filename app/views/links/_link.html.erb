@@ -2,7 +2,7 @@
   <%= link_to upvote_link_path(link, page: params[:page]) do %>
     <i id="upvote" class="glyphicon glyphicon-menu-up"></i>
   <% end %>
-  <p><%= link.votes %></p>
+  <p class="text-center"><%= link.votes %></p>
   <%= link_to downvote_link_path(link, page: params[:page]) do %>
     <i id="downvote" class="glyphicon glyphicon-menu-down"></i>
   <% end %>
