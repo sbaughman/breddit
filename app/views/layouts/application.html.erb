@@ -7,13 +7,41 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="text-center">
+        <h1>BREDDIT</h1>
+        <h3>The Freshest Bread-Related Links</h3>
+      </div>
 
-<div class="container">
-  <div class="row">
-    <%= yield %>
+    </div>
   </div>
-</div>
 
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          The Ironyard Copyright 2013. All Rights Reserved
+        </div>
+        <div class="col-xs-6">
+          <nav>
+            <ul class="list-inline text-right">
+              <li><a href="#">Bread</a></li>
+              <li><a href="#">Tastes</a></li>
+              <li><a href="#">So</a></li>
+              <li><a href="#">Good</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.order(votes: :desc)
+    @links = Link.order(votes: :desc).page(params[:page])
   end
 
   def new
@@ -17,15 +17,16 @@ class LinksController < ApplicationController
     end
   end
 
-  def vote
+  def upvote
     @link = Link.find(params[:id])
     @link.increment!(:votes)
-    redirect_to @link.url
+    redirect_to root_path(page: params[:page])
   end
 
-  def show
+  def downvote
     @link = Link.find(params[:id])
-    redirect_to @link.url
+    @link.decrement!(:votes)
+    redirect_to root_path(page: params[:page])
   end
 
   private

@@ -1,5 +1,11 @@
-<h1>LINKS</h1>
+<h1>ALL LINKS</h1>
 
 <%= render @links %>
 
-<%= link_to "Submit a New Link", new_link_path %>
+<div class="paginate">
+  <%= paginate @links %>
+</div>
+
+<div class="links">
+  <%= link_to "Submit a New Link", new_link_path %>
+</div>

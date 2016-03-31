@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :links do
     member do
-      get 'vote'
+      get 'upvote'
+      get 'downvote'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
