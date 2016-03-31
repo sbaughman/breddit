@@ -1,0 +1,8 @@
+<h1>CREATE NEW LINK</h1>
+
+<%= simple_form_for @link do |f| %>
+  <%= f.input :title %>
+  <%= f.input :url %>
+  <%= f.input :summary %>
+  <%= f.button :submit %>
+<% end %>
