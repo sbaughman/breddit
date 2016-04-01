@@ -14,7 +14,7 @@ class LinksController < ApplicationController
       redirect_to :root
     else
       if @link.errors[:url] && !@link.url.nil?
-        vote_link = Link.where("url = ?", @link.url).first
+        vote_link = Link.find_by("url = ?", @link.url)
         vote_link.increment!(:votes)
         redirect_to root_path
       else
