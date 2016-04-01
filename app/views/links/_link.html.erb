@@ -1,9 +1,9 @@
 <div class="col-xs-1 votes text-center">
-  <%= link_to upvote_link_path(link, page: params[:page]) do %>
+  <%= link_to link_votes_path(link, :value => 1), :method => :post do %>
     <i id="upvote" class="glyphicon glyphicon-triangle-top"></i>
   <% end %>
-  <p><%= link.votes %></p>
-  <%= link_to downvote_link_path(link, page: params[:page]) do %>
+  <p><%= link.karma %></p>
+  <%= link_to link_votes_path(link, :value => -1), :method => :post do %>
     <i id="downvote" class="glyphicon glyphicon-triangle-bottom"></i>
   <% end %>
 </div>

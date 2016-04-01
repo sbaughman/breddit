@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.order(votes: :desc).page(params[:page])
+    @links = Link.order(karma: :desc).page(params[:page])
   end
 
   def new
@@ -15,24 +15,12 @@ class LinksController < ApplicationController
     else
       if @link.errors[:url] && !@link.url.nil?
         vote_link = Link.find_by("url = ?", @link.url)
-        vote_link.increment!(:votes)
+        Vote.create!(link_id: vote_link.id, value: 1)
         redirect_to root_path
       else
         render :new
       end
     end
-  end
-
-  def upvote
-    @link = Link.find(params[:id])
-    @link.increment!(:votes)
-    redirect_to root_path(page: params[:page])
-  end
-
-  def downvote
-    @link = Link.find(params[:id])
-    @link.decrement!(:votes)
-    redirect_to root_path(page: params[:page])
   end
 
   private

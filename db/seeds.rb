@@ -11,5 +11,9 @@
 end
 
 50.times do
-  Link.create!(title: Faker::Hipster.sentence, url: Faker::Internet.url, summary: Faker::Lorem.paragraph, votes: rand(500), user_id: rand(1..10))
+  Link.create!(title: Faker::Hipster.sentence, url: Faker::Internet.url, summary: Faker::Lorem.paragraph, user_id: rand(1..10))
+end
+
+5000.times do
+  Vote.create!(value: [-1,1,1].sample, link_id: rand(1..50))
 end
