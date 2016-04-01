@@ -1,10 +1,10 @@
 <div class="col-xs-1 votes">
   <%= link_to upvote_link_path(link, page: params[:page]) do %>
-    <i id="upvote" class="glyphicon glyphicon-menu-up"></i>
+    <i id="upvote" class="glyphicon glyphicon-triangle-top"></i>
   <% end %>
-  <p class="text-center"><%= link.votes %></p>
+  <p class = "text-center"><%= link.votes %></p>
   <%= link_to downvote_link_path(link, page: params[:page]) do %>
-    <i id="downvote" class="glyphicon glyphicon-menu-down"></i>
+    <i id="downvote" class="glyphicon glyphicon-triangle-bottom"></i>
   <% end %>
 </div>
 <div class="col-xs-11 link">

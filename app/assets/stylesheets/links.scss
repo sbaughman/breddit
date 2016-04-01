@@ -3,10 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron {
+  background: url(asset_path('background')) no-repeat center center;
   h1 {
+    color: rgba(255,255,255,.9);
     margin-top: -5px;
   }
   h3 {
+    color: rgba(220,220,220,.9);
     margin-top: -5px;
   }
 }
@@ -15,15 +18,18 @@
   padding-top: 12px;
   margin-left: -10px;
   p {
-    margin: -3px 0 -1px -8px;
+    margin: -3px 0 -1px -7px;
   }
-  #upvote {
-    color: rgba(100,255,100,1);
-    padding-left: 5px;
+  i {
+    color: rgba(150,150,150,1);
+    padding-left: 6px;
+    transition: color .1s ease-in-out;
   }
-  #downvote {
-    color: #f33;
-    padding-left: 5px;
+  #upvote:hover {
+    color: rgba(50,255,50,1);
+  }
+  #downvote:hover {
+    color: rgba(255,50,50,1);
   }
 }
 

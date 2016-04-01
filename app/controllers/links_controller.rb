@@ -13,7 +13,13 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to :root
     else
-      render :new
+      if @link.errors[:url] && !@link.url.nil?
+        vote_link = Link.where("url = ?", @link.url).first
+        vote_link.increment!(:votes)
+        redirect_to root_path
+      else
+        render :new
+      end
     end
   end
 
@@ -32,7 +38,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :summary)
+    params.require(:link).permit(:title, :url, :summary, :user_id)
   end
 
 end
