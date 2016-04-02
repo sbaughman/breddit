@@ -1,0 +1,14 @@
+<h1>CREATE NEW SUB-BREDDIT</h1>
+
+<%= simple_form_for @sub do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
+
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>
+<div class="btn btn-default links">
+  <%= link_to "Back to Sub-Breddits", subs_path %>
+</div>

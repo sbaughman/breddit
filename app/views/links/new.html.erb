@@ -5,5 +5,10 @@
   <%= f.input :url %>
   <%= f.input :summary %>
   <%= f.association :user %>
+  <%= f.association :sub %>
   <%= f.button :submit %>
 <% end %>
+
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>

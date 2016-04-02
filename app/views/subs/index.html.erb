@@ -1,0 +1,14 @@
+<h1>ALL SUB-BREDDITS</h1>
+
+<%= render @subs %>
+
+<div class="paginate">
+  <%= paginate @subs %>
+</div>
+
+<div class="btn btn-default links">
+  <%= link_to "Create a New Sub-Breddit", new_sub_path %>
+</div>
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>

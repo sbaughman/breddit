@@ -1,0 +1,14 @@
+<div class="col-xs-12 sub">
+  <h2><%= @sub.name.upcase %></h2>
+  <h4>Date Created</h4>
+  <p><%= @sub.created_at %></p>
+  <h4>Sub-Breddit Description</h4>
+  <p><%= @sub.description %></p>
+</div>
+
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>
+<div class="btn btn-default links">
+  <%= link_to "Back to Sub-Breddits", subs_path %>
+</div>
