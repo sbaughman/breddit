@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .jumbotron {
+  font-family: 'Fjalla One', sans-serif;
   background: url(asset_path('background')) no-repeat center center;
   h1 {
     color: rgba(255,255,255,.9);
@@ -11,6 +13,13 @@
   h3 {
     color: rgba(220,220,220,.9);
     margin-top: -5px;
+  }
+}
+
+.container {
+  font-family: 'Roboto Condensed', sans-serif;
+  h1, h2, h3 {
+    font-family: 'Fjalla One', sans-serif;
   }
 }
 
@@ -41,6 +50,7 @@
 }
 
 footer {
+  font-family: 'Fjalla One', sans-serif;
   padding: 20px;
   background-color: #aaa;
   margin-top: 30px;
