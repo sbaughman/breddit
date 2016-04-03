@@ -1,9 +1,11 @@
 <div class="col-sm-3 link aside">
   <h2><%= @user.name.upcase %></h2>
+  <h4>Username:</h4>
+  <p><%= @user.username %></p>
   <h4>Total Karma:</h4>
   <p><%= @user.karma %></p>
   <h4>Date Created</h4>
-  <p><%= @user.created_at %></p>
+  <p><%= @user.created_at.strftime("%A, %b %d %Y at %-I:%M %p") %></p>
   <h4>User Bio</h4>
   <p><%= @user.bio %></p>
 </div>

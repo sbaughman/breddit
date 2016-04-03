@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :subs
-  resources :users
+  resources :users, except: [:show]
   resources :links do
     resources :votes, only: [:create, :destroy]
   end
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   root 'links#index'
 
   get '/:name' => 'subs#show', as: :sub_name
+
+  get '/users/:username' => 'users#show', as: :user_name
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

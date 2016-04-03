@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = params[:id] ? User.find(params[:id]) : User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username])
     unless @user.nil?
       @links = Link.where("user_id = ?", @user.id).order(karma: :desc).page(params[:page])
     else
       flash[:danger] = "Not a valid user"
-      redirect_to root_path
+      redirect_to users_path
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :bio)
+    params.require(:user).permit(:username, :name, :email, :bio)
   end
 
 end

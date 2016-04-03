@@ -1,4 +1,5 @@
 class Sub < ActiveRecord::Base
+  paginates_per 10
   has_many :links
   validates :name, :description, presence: true
   validates :name, uniqueness: true

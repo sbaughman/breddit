@@ -1,5 +1,5 @@
 <div class="col-xs-12 index">
-  <%= link_to user.name.upcase, user %>
+  <%= link_to user.name.upcase, user_name_path(user.username) %>
   <p>Karma: <%= user.karma %></p>
-  <p>User Since: <%= user.created_at %></p>
+  <p>User Since: <%= user.created_at.strftime("%D") %></p>
 </div>
