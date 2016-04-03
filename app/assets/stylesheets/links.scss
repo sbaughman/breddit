@@ -6,13 +6,46 @@
 .jumbotron {
   font-family: 'Fjalla One', sans-serif;
   background: url(asset_path('background')) no-repeat center center;
+  position: relative;
   h1 {
     color: rgba(255,255,255,.9);
-    margin-top: -5px;
+    margin-top: 50px;
+    font-size: 80px;
   }
-  h3 {
+  h2 {
     color: rgba(220,220,220,.9);
     margin-top: -5px;
+    margin-bottom: 60px;
+  }
+  .links {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    position: absolute;
+    li {
+      padding: 10px;
+      display: inline-block;
+      a {
+        color: rgba(255,255,255,.9);
+        transition: color .1s ease-in-out;
+      }
+      a:hover {
+        color: rgba(255,255,255,1);
+      }
+    }
+  }
+  .user-login {
+    top: 0;
+    text-align: right;
+    a {
+      font-size: 20px;
+    }
+  }
+  .root-links {
+    bottom: 0;
+    text-align: center;
+    background: rgba(0,0,0,.4);
   }
 }
 
@@ -54,4 +87,34 @@ footer {
   padding: 20px;
   background-color: #aaa;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    h1 {
+      font-size: 60px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .user-login {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+  .row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main {
+    h1 {
+      font-size: 30px;
+    }
+    .sub {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
 }
