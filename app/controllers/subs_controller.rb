@@ -19,6 +19,7 @@ class SubsController < ApplicationController
 
   def show
     @sub = Sub.find(params[:id])
+    @links = Link.where("sub_id = ?", @sub.id).order(karma: :desc).page(params[:page])
   end
 
   private
