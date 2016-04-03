@@ -2,13 +2,13 @@
   <%= link_to link_votes_path(link, :value => 1), :method => :post do %>
     <i id="upvote" class="glyphicon glyphicon-triangle-top"></i>
   <% end %>
-  <p><%= link.karma %></p>
+  <p><span class="dark"><%= link.karma %></span></p>
   <%= link_to link_votes_path(link, :value => -1), :method => :post do %>
     <i id="downvote" class="glyphicon glyphicon-triangle-bottom"></i>
   <% end %>
 </div>
 <div class="col-xs-11 link">
   <%= link_to link.title, link.url %>
-  <p>submitted to sub: <%= link_to link.sub.name, sub_name_path(params[:name] = link.sub.name) %></p>
+  <p><span class="dark">submitted to sub:</span> <%= link_to link.sub.name, sub_name_path(params[:name] = link.sub.name) %></p>
   <p><%= link.summary %></p>
 </div>
