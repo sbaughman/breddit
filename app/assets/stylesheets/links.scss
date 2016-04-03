@@ -82,6 +82,17 @@
   padding: 10px 0px;
 }
 
+.index {
+  padding-left: 0px;
+  a {
+  font-size: 20px;
+  }
+}
+
+.aside {
+  padding-right: 10px;
+}
+
 footer {
   font-family: 'Fjalla One', sans-serif;
   padding: 20px;
@@ -111,7 +122,7 @@ footer {
     h1 {
       font-size: 30px;
     }
-    .sub {
+    .index {
       a {
         font-size: 16px;
       }

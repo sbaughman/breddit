@@ -1,0 +1,14 @@
+<h1>ALL USERS</h1>
+
+<%= render @users %>
+
+<div class="paginate">
+  <%= paginate @users %>
+</div>
+
+<div class="btn btn-default links">
+  <%= link_to "Create a New User", new_user_path %>
+</div>
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>

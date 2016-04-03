@@ -1,12 +1,12 @@
-<div class="col-sm-3 sub">
+<div class="col-sm-3 link aside">
   <h2><%= @sub.name.upcase %></h2>
   <h4>Date Created</h4>
   <p><%= @sub.created_at %></p>
   <h4>Sub-Breddit Description</h4>
   <p><%= @sub.description %></p>
 </div>
-<div class="col-sm-9 sub">
-  <h2>Links</h2>
+<div class="col-sm-9 link">
+  <h2>LINKS</h2>
   <% @links.each do |link| %>
     <%= render partial: 'links/link', locals: { link: link } %>
   <% end %>
