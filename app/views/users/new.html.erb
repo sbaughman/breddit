@@ -1,6 +1,7 @@
 <h1>CREATE NEW USER</h1>
 
 <%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :bio %>
