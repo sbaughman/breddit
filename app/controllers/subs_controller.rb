@@ -11,6 +11,7 @@ class SubsController < ApplicationController
   def create
     @sub = Sub.new(sub_params)
     if @sub.save
+      flash[:success] = "Sub-breddit created!"
       redirect_to subs_path
     else
       render :new
@@ -22,6 +23,7 @@ class SubsController < ApplicationController
     unless @sub.nil?
       @links = Link.where("sub_id = ?", @sub.id).order(karma: :desc).page(params[:page])
     else
+      flash[:danger] = "Not a valid sub-breddit name"
       redirect_to root_path
     end
   end

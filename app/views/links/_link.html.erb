@@ -9,6 +9,6 @@
 </div>
 <div class="col-xs-11 link">
   <%= link_to link.title, link.url %>
-  <p>submitted to sub: <%= link_to link.sub.name, sub_path(link.sub) %></p>
+  <p>submitted to sub: <%= link_to link.sub.name, sub_name_path(params[:name] = link.sub.name) %></p>
   <p><%= link.summary %></p>
 </div>

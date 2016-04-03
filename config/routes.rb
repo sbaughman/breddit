@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'links#index'
 
-  get 'b/:name' => 'subs#show', as: :sub_name
+  get '/:name' => 'subs#show', as: :sub_name
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
