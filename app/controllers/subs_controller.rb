@@ -18,8 +18,12 @@ class SubsController < ApplicationController
   end
 
   def show
-    @sub = Sub.find(params[:id])
-    @links = Link.where("sub_id = ?", @sub.id).order(karma: :desc).page(params[:page])
+    @sub = params[:id] ? Sub.find(params[:id]) : Sub.find_by(name: params[:name])
+    unless @sub.nil?
+      @links = Link.where("sub_id = ?", @sub.id).order(karma: :desc).page(params[:page])
+    else
+      redirect_to root_path
+    end
   end
 
   private
