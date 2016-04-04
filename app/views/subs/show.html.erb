@@ -7,9 +7,7 @@
 </div>
 <div class="col-sm-9 link">
   <h2>LINKS</h2>
-  <% @links.each do |link| %>
-    <%= render partial: 'links/link', locals: { link: link } %>
-  <% end %>
+  <%= render partial: 'links/link', collection: @links %>
 </div>
 
 <div class="btn btn-default links">

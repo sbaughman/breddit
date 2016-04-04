@@ -9,6 +9,6 @@
 </div>
 <div class="col-xs-11 link">
   <%= link_to link.title, upvote_link_path(link) %>
-  <p><span class="dark">submitted to sub:</span> <%= link_to link.sub.name, sub_name_path(params[:name] = link.sub.name) %> <span class="dark">by: </span> <%= link_to link.user.name, user_name_path(link.user.username) %> <span class="dark">on: </span> <%= link.created_at.strftime("%A, %b %d %Y at %-I:%M %p") %></p>
+  <p><span class="dark">submitted to sub:</span> <%= link_to link.sub.name, sub_name_path(link.sub.name) %> <span class="dark">by: </span> <%= link_to link.user.name, user_name_path(link.user.username) %> <span class="dark">on: </span> <%= link.created_at.strftime("%A, %b %d %Y at %-I:%M %p") %></p>
   <p><%= link.summary %></p>
 </div>
