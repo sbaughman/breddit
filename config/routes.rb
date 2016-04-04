@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, except: [:show, :new]
   resources :links do
     member do
-      get 'upvote'
+      get 'click'
     end
     resources :votes, only: [:create, :destroy]
   end

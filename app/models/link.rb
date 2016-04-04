@@ -4,11 +4,12 @@ class Link < ActiveRecord::Base
   belongs_to :sub
   belongs_to :user
   has_many :votes
+  has_many :clicks
 
   before_validation :url_has_proper_prefix
   validates :title, :url, :summary, :user, :sub, presence: true
   validates :url, uniqueness: { case_sensitive: false }
-  validate :url, :format => { with: /\Ahttps?:\/\//}
+  validates :url, :format => { with: /\Ahttps?:\/\//}
 
   after_update :update_user_karma
 

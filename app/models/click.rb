@@ -1,4 +1,4 @@
-class Vote < KarmaContributor
+class Click < KarmaContributor
   belongs_to :link
   belongs_to :user
 

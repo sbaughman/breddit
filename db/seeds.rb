@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do
-  User.create!(name: Faker::Name.name, email: Faker::Internet.email, bio: Faker::Hipster.paragraphs(2).join("\n\n"), username: Faker::Internet.domain_word)
+  User.create!(name: Faker::Name.name, email: Faker::Internet.email, bio: Faker::Hipster.paragraphs(2).join("\n\n"), username: Faker::Internet.domain_word, password: "password")
 end
 
 10.times do
@@ -18,6 +18,10 @@ end
   Link.create!(title: Faker::Hipster.sentence, url: Faker::Internet.url, summary: Faker::Lorem.paragraph, user_id: rand(1..10), sub_id: rand(1..10))
 end
 
-5000.times do
-  Vote.create!(value: [-1,1,1].sample, link_id: rand(1..50), user_id: rand(1..10))
+2500.times do
+  Vote.create!(value: [-5,5,5].sample, link_id: rand(1..50), user_id: rand(1..10))
+end
+
+2500.times do
+  Click.create!(value: 1, link_id: rand(1..50), user_id: rand(1..10))
 end

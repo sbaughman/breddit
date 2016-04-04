@@ -25,9 +25,9 @@ class LinksController < ApplicationController
     end
   end
 
-  def upvote
+  def click
     @link = Link.find(params[:id])
-    @link.votes.create(value: 1)
+    @link.clicks.create(value: 1)
     redirect_to @link.url
   end
 
