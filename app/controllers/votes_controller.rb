@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_action :require_user, only: [:create]
 
   def index
   end

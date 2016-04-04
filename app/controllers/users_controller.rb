@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :disallow_user, only: [:new, :create]
 
   def index
     @users = User.order(karma: :desc).page(params[:page])
