@@ -16,7 +16,7 @@ class LinksController < ApplicationController
     else
       if @link.errors[:url] && !@link.url.nil?
         vote_link = Link.find_by("url = ?", @link.url)
-        @link.votes.create(value: 1)
+        vote_link.votes.create(value: 1)
         flash[:info] = "Link to that URL already exists"
         redirect_to root_path
       else

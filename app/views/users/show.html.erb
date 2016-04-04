@@ -10,8 +10,21 @@
   <p><%= @user.bio %></p>
 </div>
 <div class="col-sm-9 link">
-  <h2>LINKS</h2>
-  <%= render partial: 'links/link', collection: @links %>
+  <h2>SUBMITTED LINKS</h2>
+  <%= render partial: 'links/link', collection: @submitted_links %>
+  <div class="paginate">
+    <%= paginate @submitted_links %>
+  </div>
+  <h2>VOTED LINKS</h2>
+  <%= render partial: 'links/link', collection: @voted_links %>
+  <div class="paginate">
+    <%= paginate @user_votes %>
+  </div>
+  <h2>CLICKED LINKS</h2>
+  <%= render partial: 'links/link', collection: @clicked_links %>
+  <div class="paginate">
+    <%= paginate @user_clicks %>
+  </div>
 </div>
 
 <div class="btn btn-default links">
