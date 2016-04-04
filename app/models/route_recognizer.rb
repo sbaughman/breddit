@@ -4,6 +4,7 @@ class RouteRecognizer
   # To use this inside your app, call:
   # `RouteRecognizer.new.initial_path_segments`
   # This returns an array, e.g.: ['assets','blog','team','faq','users']
+  # Credit to bantic/rails_route_recognizer.rb
 
   INITIAL_SEGMENT_REGEX = %r{^\/([^\/\(:]+)}
 

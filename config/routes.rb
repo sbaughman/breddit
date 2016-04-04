@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :subs
   resources :users, except: [:show]
   resources :links do
+    member do
+      get 'upvote'
+    end
     resources :votes, only: [:create, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
