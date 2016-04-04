@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :votes
   has_secure_password
   validates :username, :name, :email, :bio, presence: true
-  validates :name, uniqueness: true
+  validates :username, uniqueness: true
   validates :username, format: { without: /\s/ }
 
 end
