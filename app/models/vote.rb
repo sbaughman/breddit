@@ -1,5 +1,6 @@
 class Vote < ActiveRecord::Base
   belongs_to :link
+  belongs_to :user
 
   after_save :update_votes
 

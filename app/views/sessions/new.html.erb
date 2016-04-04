@@ -1,0 +1,11 @@
+<h1>LOG IN</h1>
+
+<%= simple_form_for :session, url: login_create_path do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
+
+<div class="btn btn-default links">
+  <%= link_to "Back to Home", root_path %>
+</div>

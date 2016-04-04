@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :subs
-  resources :users, except: [:show]
+  resources :users, except: [:show, :new]
   resources :links do
     member do
       get 'upvote'
@@ -12,6 +12,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'links#index'
+
+  get '/login' => 'sessions#new', as: :login
+  post '/login' => 'sessions#create', as: :login_create
+  delete '/logout' => 'sessions#destroy', as: :logout
+
+  get '/signup' => 'users#new', as: :signup
 
   get '/:name' => 'subs#show', as: :sub_name
 

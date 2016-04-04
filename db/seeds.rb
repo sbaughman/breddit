@@ -19,5 +19,5 @@ end
 end
 
 5000.times do
-  Vote.create!(value: [-1,1,1].sample, link_id: rand(1..50))
+  Vote.create!(value: [-1,1,1].sample, link_id: rand(1..50), user_id: rand(1..10))
 end
