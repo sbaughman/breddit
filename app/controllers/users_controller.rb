@@ -33,6 +33,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.authenticate(params[:user][:old_password])
+      @user.update(password: params[:user][:password])
+      flash[:success] = "Profile successfully updated"
+      redirect_to user_name_path(@user.username)
+    else
+      render :edit
+    end
+  end
+
 
   private
 

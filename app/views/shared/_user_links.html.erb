@@ -1,5 +1,6 @@
 <% if current_user %>
   <ul class="user-login links">
+    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
     <li><%= link_to "Log Out", logout_path, method: :delete %></li>
   </ul>
 <% else %>
