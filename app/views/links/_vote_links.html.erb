@@ -1,0 +1,11 @@
+<% if current_user %>
+  <%= link_to link_votes_path(link, :value => 1), :method => :post do %>
+    <i id="upvote" class="glyphicon glyphicon-triangle-top"></i>
+  <% end %>
+  <p><span class="dark"><%= link.karma %></span></p>
+  <%= link_to link_votes_path(link, :value => -1), :method => :post do %>
+    <i id="downvote" class="glyphicon glyphicon-triangle-bottom"></i>
+  <% end %>
+<% else %>
+  <p id="link-karma"><span class="dark"><%= link.karma %></span></p>
+<% end %>
