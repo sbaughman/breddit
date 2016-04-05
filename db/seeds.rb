@@ -18,6 +18,10 @@ end
   Link.create!(title: Faker::Hipster.sentence, url: Faker::Internet.url, summary: Faker::Lorem.paragraph, user_id: rand(1..10), sub_id: rand(1..10))
 end
 
+200.times do
+  Comment.create!(content: Faker::Hacker.say_something_smart, user_id: rand(1..10), link_id: rand(1..50))
+end
+
 2500.times do
   Vote.create!(value: [-5,5,5].sample, link_id: rand(1..50), user_id: rand(1..10))
 end
