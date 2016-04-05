@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
     unless @user.nil?
-      @submitted_links = Link.where("user_id = ?", @user.id).order(karma: :desc).page(params[:page]).per(5)
+      @submitted_links = @user.links.order(karma: :desc).page(params[:page]).per(5)
       @user_votes = Vote.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(5)
       @voted_links = @user_votes.map { |vote| Link.find(vote.link_id) }
       @user_clicks = Click.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(5)
