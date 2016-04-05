@@ -5,6 +5,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   has_many :votes
   has_many :clicks
+  has_many :comments
 
   before_validation :url_has_proper_prefix
   validates :title, :url, :summary, :user, :sub, presence: true

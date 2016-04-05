@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :subs
   resources :users, except: [:show, :new]
   resources :links do
