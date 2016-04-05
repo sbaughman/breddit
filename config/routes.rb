@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
+  resources :comments, except: [:index, :show]
   resources :subs
-  resources :users, except: [:show, :new]
+  resources :users, except: [:show, :new, :index]
   resources :links do
     member do
       get 'click'
