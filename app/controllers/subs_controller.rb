@@ -21,7 +21,7 @@ class SubsController < ApplicationController
   def show
     @sub = params[:id] ? Sub.find(params[:id]) : Sub.find_by(name: params[:name])
     unless @sub.nil?
-      @links = Link.where("sub_id = ?", @sub.id).order(karma: :desc).page(params[:page])
+      @links = @sub.links.order(karma: :desc).page(params[:page])
     else
       flash[:danger] = "Not a valid sub-breddit name"
       redirect_to root_path
