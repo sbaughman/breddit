@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  before_action :require_user, only: [:new, :create]
 
   def index
     @links = Link.order(karma: :desc).page(params[:page])
@@ -10,6 +11,7 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    @link.user = current_user
     if @link.save
       flash[:success] = "Link successfully created!"
       redirect_to :root
@@ -34,7 +36,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :summary, :user_id, :sub_id)
+    params.require(:link).permit(:title, :url, :summary, :sub_id)
   end
 
 end

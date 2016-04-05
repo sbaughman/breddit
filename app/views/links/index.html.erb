@@ -6,9 +6,11 @@
   <%= paginate @links %>
 </div>
 
-<div class="btn btn-default links">
-  <%= link_to "Submit a New Link", new_link_path %>
-</div>
+<% if current_user %>
+  <div class="btn btn-default links">
+    <%= link_to "Submit a New Link", new_link_path %>
+  </div>
+<% end %>
 <div class="btn btn-default links">
   <%= link_to "All Sub-Breddits", subs_path %>
 </div>
