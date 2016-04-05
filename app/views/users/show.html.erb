@@ -18,12 +18,12 @@
   <h2>VOTED LINKS</h2>
   <%= render partial: 'links/link', collection: @voted_links %>
   <div class="paginate">
-    <%= paginate @user_votes %>
+    <%= paginate @voted_links %>
   </div>
   <h2>CLICKED LINKS</h2>
   <%= render partial: 'links/link', collection: @clicked_links %>
   <div class="paginate">
-    <%= paginate @user_clicks %>
+    <%= paginate @clicked_links %>
   </div>
 </div>
 

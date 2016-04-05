@@ -23,10 +23,8 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     unless @user.nil?
       @submitted_links = @user.links.order(karma: :desc).page(params[:page]).per(5)
-      @user_votes = Vote.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(5)
-      @voted_links = @user_votes.map { |vote| Link.find(vote.link_id) }
-      @user_clicks = Click.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(5)
-      @clicked_links = @user_clicks.map { |click| Link.find(click.link_id) }
+      @voted_links = @user.voted_links.order(created_at: :desc).page(params[:page]).per(5)
+      @clicked_links = @user.clicked_links.order(created_at: :desc).page(params[:page]).per(5)
     else
       flash[:danger] = "Not a valid user"
       redirect_to users_path
