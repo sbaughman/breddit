@@ -27,6 +27,11 @@ class LinksController < ApplicationController
     end
   end
 
+  def show
+    @link = Link.find(params[:id])
+    @comment = Comment.new
+  end
+
   def click
     @link = Link.find(params[:id])
     if current_user

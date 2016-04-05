@@ -1,0 +1,7 @@
+<div class="comment-form">
+  <%= simple_form_for @comment do |f| %>
+    <%= f.input :content %>
+    <%= f.input :link_id, as: :hidden, input_html: { value: @link.id } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

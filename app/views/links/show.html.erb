@@ -1,0 +1,12 @@
+<div class="col-sm-4">
+  <%= render partial: 'subs/sub_info', locals: { :@sub => @link.sub } %>
+</div>
+
+<div class="col-sm-8">
+  <%= render @link %>
+
+  <h3>Comments</h3>
+  <%= render template: 'comments/new' %>
+  <%= render @link.comments %>
+
+</div>

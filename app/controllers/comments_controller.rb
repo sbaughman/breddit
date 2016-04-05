@@ -8,10 +8,9 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    @comment.link_id = params[:id]
     if @comment.save
       flash[:success] = "Comment created!"
-      redirect_to link_path(params[:id])
+      redirect_to :back
     else
       render :new
     end
@@ -20,7 +19,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :link_id)
   end
 
 end
