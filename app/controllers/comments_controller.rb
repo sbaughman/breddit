@@ -7,12 +7,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user = current_user
     if @comment.save
       flash[:success] = "Comment created!"
       redirect_to :back
     else
-      render :new
+      @link = Link.find(params[:comment][:link_id])
+      render template: 'posts/show'
     end
   end
 
