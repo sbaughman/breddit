@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments, except: [:index, :show]
   resources :subs
   resources :users, except: [:show, :new, :index]
   resources :links do
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
       get 'click'
     end
     resources :votes, only: [:create, :destroy]
+    resources :comments, except: [:index]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

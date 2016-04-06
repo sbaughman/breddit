@@ -5,5 +5,5 @@
 </h6>
 <%= simple_format(comment.content) %>
 <ul class="list-inline">
-  <li><%= link_to "permalink", comment %></li>
+  <li><%= link_to "permalink", [@link, comment] %></li>
 </ul>
