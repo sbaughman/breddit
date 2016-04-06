@@ -1,0 +1,8 @@
+<%= simple_form_for @link do |f| %>
+  <%= f.input :title %>
+  <%= f.input :url %>
+  <%= f.input :summary %>
+  <%= f.input :tag_list %>
+  <%= f.association :sub %>
+  <%= f.button :submit %>
+<% end %>

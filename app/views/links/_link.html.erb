@@ -10,7 +10,11 @@
     <%= link_to link.user.name, user_name_path(link.user.username) %>
     <span class="dark">on: </span>
     <%= link.created_at.strftime("%A, %b %d %Y at %-I:%M %p") %>&nbsp&nbsp&nbsp
-    <%= link_to "Comments", link %>
+    <ul class="list-inline">
+      <li><%= link_to "Comments", link %></li>
+      <li>Tags:</li>
+      <%= render link.tags %>
+    </ul>
   </p>
   <p><%= link.summary %></p>
 </div>

@@ -27,6 +27,20 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update_attributes(link_params)
+      flash[:success] = "Link updated!"
+      redirect_to @link
+    else
+      render :edit
+    end
+  end
+
   def show
     @link = Link.find(params[:id])
     @comment = Comment.new
@@ -45,7 +59,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :summary, :sub_id)
+    params.require(:link).permit(:title, :url, :summary, :sub_id, :tag_list)
   end
 
 end

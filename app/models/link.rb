@@ -27,4 +27,14 @@ class Link < ActiveRecord::Base
     end
   end
 
+  def tag_list
+    tags.map { |tag| tag.name }.join(", ")
+  end
+
+  def tag_list=(string)
+    tag_names = string.split(",").map(&:strip)
+    tags = tag_names.map { |name| Tag.find_or_initialize_by(name: name) }
+    self.tags = tags
+  end
+
 end
