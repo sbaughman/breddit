@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags, only: [:show]
   resources :subs
   resources :users, except: [:show, :new, :index]
   resources :links do

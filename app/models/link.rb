@@ -6,6 +6,8 @@ class Link < ActiveRecord::Base
   has_many :votes
   has_many :clicks
   has_many :comments
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   before_validation :url_has_proper_prefix
   validates :title, :url, :summary, :user, :sub, presence: true
