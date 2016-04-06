@@ -1,6 +1,9 @@
-<h6 class="comment">
+<h6>
   Comment by:
   <%= link_to comment.user.username, user_name_path(comment.user.username) %>
   <%= time_ago_in_words(comment.created_at) %> ago
 </h6>
 <%= simple_format(comment.content) %>
+<ul class="list-inline">
+  <li><%= link_to "permalink", comment %></li>
+</ul>
