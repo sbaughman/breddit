@@ -1,0 +1,13 @@
+<div class="col-sm-4">
+  <%= render partial: 'subs/sub_info', locals: { :@sub => @comment.link.sub } %>
+</div>
+
+<div class="col-sm-8">
+  <div class="link-single">
+    <%= render @comment.link %>
+  </div>
+  <div class="comment">
+    <h3>Comment</h3>
+    <%= render @comment %>
+  </div>
+</div>
