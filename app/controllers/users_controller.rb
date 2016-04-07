@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :disallow_user, only: [:new, :create]
+  before_action :require_user, only: [:update, :edit, :password_edit]
 
   def index
     @users = User.order(karma: :desc).page(params[:page])
@@ -37,13 +38,22 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.authenticate(params[:user][:old_password])
+    if params[:user][:old_password] && @user.authenticate(params[:user][:old_password])
       @user.update(password: params[:user][:password])
-      flash[:success] = "Profile successfully updated"
+      flash[:success] = "Password successfully updated"
       redirect_to user_name_path(@user.username)
     else
-      render :edit
+      if @user.update_attributes(user_params)
+        flash[:success] = "Profile successfully updated"
+        redirect_to user_name_path(@user.username)
+      else
+        render :edit
+      end
     end
+  end
+
+  def password_edit
+    @user = User.find(params[:id])
   end
 
 

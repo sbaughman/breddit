@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :tags, only: [:show]
   resources :subs
-  resources :users, except: [:show, :new, :index]
+  resources :users, except: [:show, :new, :index] do
+    member do
+      get 'password_edit'
+    end
+  end
   resources :links do
     member do
       get 'click'

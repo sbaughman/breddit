@@ -48,11 +48,7 @@ class LinksController < ApplicationController
 
   def click
     @link = Link.find(params[:id])
-    if current_user
-      @link.clicks.create(value: 1, user_id: current_user.id)
-    else
-      @link.clicks.create(value: 1)
-    end
+    @link.clicks.create(value: 1, user: current_user)
     redirect_to @link.url
   end
 
